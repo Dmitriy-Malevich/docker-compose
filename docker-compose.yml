@@ -6,9 +6,7 @@ services:
       - "80:80"
     restart: always
     networks:
-      - mynetwork
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf    
+      - mynetwork    
   apache_php:
     image: dmitriy228/new_test_apache_php_delete:latest
     container_name: apache_php
