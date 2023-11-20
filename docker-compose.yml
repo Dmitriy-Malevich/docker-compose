@@ -3,7 +3,7 @@ services:
   nginx:
     image: dmitriy228/nginx_proxy_apache:latest
     ports: 
-      - "8091:80"
+      - "80:80"
     restart: always
     networks:
       - mynetwork
