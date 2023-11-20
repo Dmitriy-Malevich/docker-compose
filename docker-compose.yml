@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nginx:
+    image: dmitriy228/nginx_proxy_apache:latest
+    ports: 
+      - "8091:80"
+    restart: always
+    networks:
+      - mynetwork
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf    
+  apache_php:
+    image: dmitriy228/new_test_apache_php_delete:latest
+    container_name: apache_php
+    ports:
+      - "8090:80"
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
