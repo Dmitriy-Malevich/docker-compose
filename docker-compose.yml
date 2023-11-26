@@ -1,14 +1,14 @@
 version: "3"
 services:
   nginx:
-    image: dmitriy228/docker_nginx_jenkins:latest
+    image: dmitriy228/docker_nginx_jenkins:1.{{ build_number }}
     ports: 
       - "80:80"
     restart: always
     networks:
       - mynetwork    
   apache_php:
-    image: dmitriy228/docker_apache_jenkins:latest
+    image: dmitriy228/docker_apache_jenkins:1.{{ build_number }}
     container_name: apache_php
     ports:
       - "8090:80"
